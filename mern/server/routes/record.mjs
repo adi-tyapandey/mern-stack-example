@@ -7,9 +7,15 @@ const router = express.Router();
 // This section will help you get a list of all the records.
 router.get("/", async (req, res) => {
   let collection = await db.collection("records");
-  let results = await collection.find({}).toArray();
+  let sortOrder = req.query.sortOrder === 'asc' ? 1 : -1; // Default to descending
+  let filterCompleted = req.query.filterCompleted === 'true'; // Filter completed tasks
+ 
+  let query = filterCompleted ? { status: { $ne: 'Completed' } } : {}; // Adjust query based on filterCompleted
+  let sort = { dueDate: sortOrder }; // Define sort order
+ 
+  let results = await collection.find(query).sort(sort).toArray();
   res.send(results).status(200);
-});
+ });
 
 // This section will help you get a single record by id
 router.get("/:id", async (req, res) => {

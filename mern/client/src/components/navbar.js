@@ -12,7 +12,7 @@ export default function Navbar() {
    <div>
      <nav className="navbar navbar-expand-lg navbar-light bg-light">
        <NavLink className="navbar-brand" to="/">
-          <img alt="MongoDB logo" style={{"width" : 25 + '%'}} src="https://d3cy9zhslanhfa.cloudfront.net/media/3800C044-6298-4575-A05D5C6B7623EE37/4B45D0EC-3482-4759-82DA37D8EA07D229/webimage-8A27671A-8A53-45DC-89D7BF8537F15A0D.png"></img>
+          <img alt="MongoDB logo" style={{"width" : 25 + '%'}} src="https://media.istockphoto.com/vectors/list-icon-vector-sign-and-symbol-isolated-on-white-background-list-vector-id1001213860?k=6&m=1001213860&s=170667a&w=0&h=No8z-I2A0roHvR2B_geoqYP_jWyzWluUfgE8xO96Gd8="></img>
        </NavLink>
        <button
          className="navbar-toggler"
