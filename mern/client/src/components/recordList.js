@@ -29,7 +29,7 @@ export default function RecordList() {
 
   useEffect(() => {
     async function getRecords() {
-      const response = await fetch(`http://localhost:5050/record/?sortOrder=${sortOrder}&filterStatus=${filterStatus}`);
+      const response = await fetch(`/record/?sortOrder=${sortOrder}&filterStatus=${filterStatus}`);
 
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;
@@ -47,7 +47,7 @@ export default function RecordList() {
   }, [sortOrder, filterStatus]);
 
   async function deleteRecord(id) {
-    await fetch(`http://localhost:5050/record/${id}`, {
+    await fetch(`/record/${id}`, {
       method: "DELETE"
     });
 
@@ -57,7 +57,7 @@ export default function RecordList() {
 
   async function generateReport() {
     try {
-        const response = await fetch(`http://localhost:5050/record/`);
+        const response = await fetch(`/record/`);
         if (!response.ok) {
             throw new Error(`An error occurred: ${response.statusText}`);
         }
